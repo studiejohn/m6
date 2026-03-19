@@ -1,55 +1,36 @@
-html, body {
-  font-family: sans-serif;
-  margin: 0;
-  width: 100%;
-  height: 100%;
-}
-
-h1 {
-  font-size: 48px;
-}
-
-p {
-  max-width: 65%;
-  min-width: 500px;
-}
-
-h2 {
-  text-align: center;
-  font-size: 2.6rem;
-}
-
 div {
   padding-right: 30px;
-  height: 100%;
-  width: 100%;
 }
 
-video {
-  background-color: #000000;
-  border: 2px solid black;
+header {
+  background-color: blue;
+  padding: 30px;
+  margin: 0;
 }
 
-.container {
+header h1 {
+  color: white;
+  margin: 0;
+}
+
+.main-layout {
   display: flex;
-}
-
-.main {
-  padding-left: 30px;
-  min-width: 75%;
+  min-height: calc(100vh - 150px);
 }
 
 .nav {
-  background-color: #FFEE00;
-  max-width: 25%;
-  min-width: 140px;
+  background-color: blue;
+  width: 75px;
+  flex-shrink: 0;
+  padding: 20px;
+  padding-left: 0;
+  color: white;
+}
+
+.content {
   flex: 1;
+  padding: 20px;
+  white-space: nowrap;
+  overflow-x: auto;
 }
-
-.nav h1 {
-  padding-left: 20px;
-}
-
-
-
 
