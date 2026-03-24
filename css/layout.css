@@ -1,4 +1,11 @@
-/* header */
+/* 
+Denne css fil indeholder layout som
+- struktur
+- navigation
+- grid
+- footer
+- sidebar
+*/
 header {
     background-color: #199fd3;
     display: flex;
