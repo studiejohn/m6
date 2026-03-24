@@ -1,0 +1,42 @@
+/* 
+Denne css fil indeholder layout som
+- struktur
+- navigation
+- grid
+- footer
+- sidebar
+*/
+header {
+    background-color: #199fd3;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+nav a {
+    margin-left: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* hero */
+.hero {
+    background-image: url("../images/banner.jpg");
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* layout */
+.top-boxes {
+    display: flex;
+    justify-content: space-around;
+    margin-top: -50px;
+}
+
+footer {
+    background-color: #199fd3;
+    text-align: center;
+    padding: 10px;
+}
