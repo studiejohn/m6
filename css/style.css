@@ -27,6 +27,17 @@ body {
   justify-content: space-between;
 }
 
+.hero-header-Johan {
+  min-height: 50vh;
+  padding: 24px 32px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("../Johan.jpeg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .hero-header-aau {
   min-height: 50vh;
   padding: 24px 32px;
