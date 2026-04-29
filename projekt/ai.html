@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vores e-portfolio</title>
   <link rel="stylesheet" href="../css/style.css">
+  <script>
+    function nextStep(step) {
+      document.querySelectorAll('.step').forEach(s => s.style.display = 'none');
+      document.getElementById('step' + step).style.display = 'block';
+    }
+    function prevStep(step) {
+      document.querySelectorAll('.step').forEach(s => s.style.display = 'none');
+      document.getElementById('step' + step).style.display = 'block';
+    }
+  </script>
 </head>
 <body>
   <header class="hero-header" id="top">
@@ -28,4 +38,39 @@
         <li>Automatisering</li>
         <li>Data analyse</li>
     </ul>
+
+    <section id="order-process">
+        <h2>Bestil et Service/Projekt</h2>
+        <form action="#" method="post">
+            <div class="step" id="step1">
+                <label for="service-type">Vælg service type:</label>
+                <select id="service-type" name="service-type" required>
+                    <option value="">Vælg...</option>
+                    <option value="chatbot">Chatbots</option>
+                    <option value="automation">Automatisering</option>
+                    <option value="data-analysis">Data analyse</option>
+                </select>
+                <button type="button" onclick="nextStep(2)">Næste</button>
+            </div>
+            <div class="step" id="step2" style="display:none;">
+                <label for="details">Yderligere detaljer:</label>
+                <textarea id="details" name="details" placeholder="Beskriv dit projekt..."></textarea>
+                <button type="button" onclick="prevStep(1)">Tilbage</button>
+                <button type="button" onclick="nextStep(3)">Næste</button>
+            </div>
+            <div class="step" id="step3" style="display:none;">
+                <label for="contact">Kontakt information:</label>
+                <input type="text" id="name" name="name" placeholder="Dit navn" required>
+                <input type="email" id="email" name="email" placeholder="Din email" required>
+                <input type="tel" id="phone" name="phone" placeholder="Dit telefonnummer">
+                <button type="button" onclick="prevStep(2)">Tilbage</button>
+                <button type="submit">Send bestilling</button>
+            </div>
+        </form>
+    </section>
 </main>
+<footer>
+    <p>© AAU 2026</p>
+  </footer>
+</body>
+</html>
