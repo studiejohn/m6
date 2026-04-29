@@ -11,7 +11,7 @@
     <nav class="top-nav" aria-label="Hovednavigation">
       <a href="index.html">Hjem</a>
       <a href="about.html">Om os</a>
-      <a href="Webdesign.html">Projekter</a>
+      <a href="presentation.html">Projekter</a>
       <a href="pricing.html">Priser</a>
       <a href="presentation.html">Services</a>
       <a href="faq.html">FAQ</a>
@@ -19,15 +19,37 @@
     <h1>Vores e-portfolio, studende på IT-ledelse</h1>
   </header>
 <main>
-    <h2>Præsentation</h2>
+    <section id="projekter-intro">
+      <h2>Hvad vi har arbejdet på</h2>
+      <p>Her finder du en eksempler på de projekter vi har gennemført.</p>
+    </section>
 
-    <div class="box">
-        <h3>Projekt 1</h3>
-        <p>Beskrivelse af projekt.</p>
-    </div>
+    <!-- Hvert projekt får sin egen section med et unikt id -->
+    <section id="projekt-eportfolio">
+      <h2>E-portfolio hjemmeside</h2>
+      <p>Udvikling af denne e-portfolio som en statisk hjemmeside med flere sider. Projektet dækker hele processen fra design og planlægning til implementering og versionsstyring med Git og GitHub.</p>
+      <!-- ul bruges til at liste de vigtigste teknologier og værktøjer -->
+      <ul>
+        <li>Teknologier: HTML og CSS</li>
+        <li>Versionsstyring: Git og GitHub</li>
+        <li>Projektstyring: Kanban via GitHub Projects</li>
+      </ul>
+    </section>
 
-    <div class="box">
-        <h3>Projekt 2</h3>
-        <p>Beskrivelse af projekt. hej </p>
-    </div>
-</main>
+    <section id="projekt-ai">
+      <h2>Implementering af AI</h2>
+      <p>Undersøgelse og dokumentation af, hvordan AI kan integreres i en virksomheds digitale løsninger.</p>
+      <ul>
+        <li>Rådgivning om AI-løsninger tilpasset virksomhedens behov</li>
+        <li>Chatbots og automatisering</li>
+        <li>Data analyse</li>
+      </ul>
+    </section>
+
+  </main>
+
+    <p>© AAU 2026</p>
+  </footer>
+
+</body>
+</html>
