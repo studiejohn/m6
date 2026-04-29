@@ -118,3 +118,64 @@ footer {
   height: 100%;
 }
 
+/* Styling for bestillingsform */
+#order-process {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+#order-process h2 {
+  color: #199fd3;
+  margin-bottom: 20px;
+}
+
+.step {
+  margin-bottom: 20px;
+}
+
+.step label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.step select,
+.step textarea,
+.step input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.step textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.step button {
+  background-color: #199fd3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.step button:hover {
+  background-color: #157a9e;
+}
+
+.step button[type="submit"] {
+  background-color: #28a745;
+}
+
+.step button[type="submit"]:hover {
+  background-color: #218838;
+}
+
