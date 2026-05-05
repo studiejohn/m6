@@ -3,41 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vores e-portfolio</title>
+  <title>FAQ - Vores e-portfolio</title>
+  <!-- style.css styrer farver, fonte og generelt udseende -->
   <link rel="stylesheet" href="../css/style.css">
+  <!-- layout.css styrer struktur, grid og navigation -->
+  <link rel="stylesheet" href="../css/layout.css">
 </head>
 <body>
+
+  <!-- Header med hero-baggrund og navigation – hero-header klassen kommer fra style.css -->
   <header class="hero-header" id="top">
+    <!-- top-nav klassen sørger for vandret navigation med styling fra style.css -->
     <nav class="top-nav" aria-label="Hovednavigation">
       <a href="index.html">Hjem</a>
       <a href="about.html">Om os</a>
-      <a href="Webdesign.html">Projekter</a>
+      <a href="presentation.html">Projekter</a>
       <a href="pricing.html">Priser</a>
       <a href="ai.html">Services</a>
       <a href="faq.html">FAQ</a>
     </nav>
     <h1>Ofte stillede spørgsmål</h1>
   </header>
-<main>
-    <h2>Her har du en liste over de spørgsmål, som kunder ofte stiller</h2>
-    
-    <ul>
-        <h3>Hvad kan I hjælpe mig med inden for AI?</h3>
-        <p>Vi tilbyder rådgivning, udvikling og implementering af AI-løsninger tilpasset dine behov.</p>
-        <h3>Hvordan kan I hjælpe med webdesign?</h3>
-        <p>Vi skaber moderne, brugervenlige og responsive hjemmesider, der passer til din virksomheds profil.</p>
-        <h3>Hvordan foregår et webdesignprojekt hos jer?</h3>
-        <p>Vi starter med en konsultation for at forstå dine behov, derefter udvikler vi en plan og arbejder tæt sammen med dig gennem hele processen.</p>
-        <h3>Hvilke priser har I for workshops og support?</h3>
-        <p>Vores priser varierer afhængigt af projektets omfang og kompleksitet. Kontakt os for et skræddersyet tilbud.</p>
-        <h3>Tilbyder I opfølgning efter færdigt arbejde?</h3>
-        <p>Ja, vi tilbyder opfølgning og support for at sikre, at vores løsninger fortsat fungerer optimalt.</p>
-    
-        <h4>Hvis du har andre spørgsmål, er du velkommen til at kontakte os på kontakt@voresfirma.dk!</h4>
-    </ul>
-</main>
-<footer>
+
+  <!-- main er centreret og begrænset i bredde via style.css -->
+  <main>
+
+    <!-- Intro til siden -->
+    <section id="faq-intro">
+      <h2>Liste over de spørgsmål, som kunder ofte stiller</h2>
+    </section>
+
+    <!-- Hvert spørgsmål får sin egen h3 og p – h3/p inde i ul er ikke gyldig HTML -->
+    <section id="faq-spoergsmaal">
+
+      <h3>Hvad kan I hjælpe mig med inden for AI?</h3>
+      <p>Vi tilbyder rådgivning, udvikling samt implementering af AI-løsninger tilpasset dine behov.</p>
+
+      <h3>Hvordan kan I hjælpe med webdesign?</h3>
+      <p>Vi skaber hjemmesider, som passer til virksomhedens profil. Vi har desuden fokus på brugervenlige og responsive hjemmesider.</p>
+
+      <h3>Hvordan foregår et webdesignprojekt hos jer?</h3>
+      <p>Vi starter med en konsultation for at forstå dine behov, derefter udvikler vi en plan og arbejder tæt sammen med dig gennem hele processen.</p>
+
+      <h3>Hvilke priser har I for workshops og support?</h3>
+      <p>Vores priser varierer afhængigt af projektets omfang og kompleksitet. Vores priser kan ses under "Prisliste". Hvis I har yderligere spørgsmål vedrørende priserne, bedes I kontakte os over mail eller telefon.</p>
+
+      <h3>Tilbyder I opfølgning efter færdigt arbejde?</h3>
+      <p>Ja, vi tilbyder opfølgning og support for at sikre, at vores løsninger fortsat fungerer optimalt.</p>
+
+    </section>
+
+    <!-- Kontaktopfordring til sidst -->
+    <section id="faq-kontakt">
+      <p>Hvis du har andre spørgsmål, er du velkommen til at kontakte os på <a href="mailto:kontakt@ajas.dk">kontakt@jas.dk</a></p>
+    </section>
+
+  </main>
+
+  <!-- Footer er den samme på alle sider for konsistens -->
+  <footer>
     <p>© AAU 2026</p>
   </footer>
+
 </body>
 </html>
