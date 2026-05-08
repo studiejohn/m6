@@ -60,7 +60,12 @@ body {
   margin: 0 auto;
   display: block;
 }
-
+.style-profil {
+  width: 100%;
+  max-width: 200px;
+  margin: 0;
+  display: block;
+}
 .top-nav {
   display: flex;
   flex-wrap: wrap;
