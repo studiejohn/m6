@@ -1,4 +1,4 @@
-**E-portfolio – IT-ledelse, AAU**
+# **E-portfolio – IT-ledelse, AAU**
 Hjemmeside udviklet som studieprojekt på IT-ledelse ved Aalborg Universitet. Hjemmesiden præsenterer en fiktiv virksomhed med ydelser inden for webdesign og AI.
 
 **Sider**
