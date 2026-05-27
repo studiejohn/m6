@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vores e-portfolio</title>
+  <!-- style.css styrer udseendet på siden -->
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+  <!-- Header med navigation og sideoverskrift -->
   <header class="hero-header" id="top">
     <nav class="top-nav" aria-label="Hovednavigation">
       <a href="index.html">Hjem</a>
@@ -19,7 +21,8 @@
     <h1>Vores priser</h1>
   </header>
 
-<main>
+  <main>
+    <!-- Introduktion og prisforklaring -->
     <section id="pricing-intro">
       <h2>Vores priser</h2>
       <p>Vælg den service og pakke, der passer bedst til dit projekt, og se vores anbefalede pris direkte.</p>
@@ -27,6 +30,7 @@
       <p>Du kan også gå til vores <a class="button-link" href="ai.html">AI services</a> for at se flere detaljer om automatisering og intelligente løsninger.</p>
     </section>
 
+    <!-- Her vælger brugeren service og pakke -->
     <section id="price-selector">
       <div class="select-row">
         <label for="service-type">Vælg service</label>
@@ -48,6 +52,7 @@
         </select>
       </div>
 
+      <!-- Priskortet vises først, når både service og pakke er valgt -->
       <div id="price-output" class="price-card hidden">
         <h3>Prisoversigt</h3>
         <p id="selected-service">Service: -</p>
@@ -58,6 +63,7 @@
       </div>
     </section>
 
+    <!-- Oversigt over pakker med faste priser -->
     <section class="pricing-grid">
       <div class="box">
         <h3>Basic</h3>
@@ -76,6 +82,7 @@
       </div>
     </section>
 
+    <!-- Call-to-action med link til kontakt og services -->
     <section class="cta-block">
       <h2>Forbundet med vores services</h2>
       <p>Vores prisoversigt arbejder sammen med servicebeskrivelsen. Hvis du vil læse mere om AI og webdesign, kan du besøge <a href="ai.html">AI services</a> eller <a href="about.html">vores om os</a>-side for at lære mere om teamet.</p>
@@ -83,10 +90,12 @@
     </section>
   </main>
 
+  <!-- Footer med copyright -->
   <footer>
     <p>© AAU 2026</p>
   </footer>
 
+  <!-- Scriptet opdaterer prisen når man vælger service og pakke -->
   <script>
     const prices = {
       webdesign: { basic: 3500, standard: 8500, premium: 14000 },
@@ -108,9 +117,11 @@
     const packageDescription = document.getElementById('package-description');
 
     function updatePrice() {
+      // Finder valgte service og pakke
       const service = serviceSelect.value;
       const pkg = packageSelect.value;
 
+      // Hvis en af dem mangler, gemmer vi priskortet igen
       if (!service || !pkg) {
         priceOutput.classList.add('hidden');
         return;
@@ -119,6 +130,7 @@
       const price = prices[service][pkg];
       const serviceLabel = service === 'webdesign' ? 'Webdesign' : service === 'ai' ? 'AI-løsninger' : 'Support & rådgivning';
 
+      // Opdaterer teksten i priskortet
       selectedService.textContent = `Service: ${serviceLabel}`;
       selectedPackage.textContent = `Pakke: ${pkg.charAt(0).toUpperCase() + pkg.slice(1)}`;
       selectedPrice.textContent = `Pris: ${price} kr`;
@@ -126,6 +138,7 @@
       priceOutput.classList.remove('hidden');
     }
 
+    // Lytter efter når brugeren ændrer valgt service eller pakke
     serviceSelect.addEventListener('change', updatePrice);
     packageSelect.addEventListener('change', updatePrice);
   </script>

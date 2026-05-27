@@ -4,19 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vores e-portfolio</title>
+  <!-- style.css styrer udseendet på siden -->
   <link rel="stylesheet" href="../css/style.css">
+  <!-- Dette script styrer de små næste/tilbage steps i bestillingsformularen -->
   <script>
     function nextStep(step) {
+      // Gemt alle step-bokse og vis kun den, som hører til step nummeret
       document.querySelectorAll('.step').forEach(s => s.style.display = 'none');
       document.getElementById('step' + step).style.display = 'block';
     }
     function prevStep(step) {
+      // Samme logik, bare når man går tilbage i formularen
       document.querySelectorAll('.step').forEach(s => s.style.display = 'none');
       document.getElementById('step' + step).style.display = 'block';
     }
   </script>
 </head>
 <body>
+  <!-- Headeren og navigationen er den samme på alle sider -->
   <header class="hero-header" id="top">
     <nav class="top-nav" aria-label="Hovednavigation">
       <a href="index.html">Hjem</a>
@@ -28,7 +33,9 @@
     </nav>
     <h1>AI Services</h1>
   </header>
-<main>
+
+  <main>
+    <!-- Kort introduktion til AI-services -->
     <section id="ai-summary">
       <h2>Implementering af AI</h2>
       <p>Vi hjælper virksomheder med at integrere AI-løsninger, som øger effektivitet og brugervenlighed.</p>
@@ -36,6 +43,7 @@
       <p>Vil du se vores priser for AI, webdesign og support? <a href="pricing.html">Gå til prisoversigten</a> og vælg den pakke, der passer bedst til dit projekt.</p>
     </section>
 
+    <!-- Liste over de vigtigste AI-tjenester -->
     <section class="service-list">
       <ul>
         <li>Chatbots</li>
@@ -44,42 +52,51 @@
       </ul>
     </section>
 
+    <!-- Kontaktinformation, hvis kunden vil skrive til os -->
     <section class="contact-service">
       <h2>Kontakt os</h2>
       <p>Har du en idé til et AI-projekt, eller vil du høre mere om priser og samarbejde? Send en mail til <a href="mailto:kontakt@os.aau.dk">kontakt@os.aau.dk</a>, så vender vi tilbage hurtigst muligt.</p>
     </section>
 
+    <!-- Bestillingsformular med flere trin -->
     <section id="order-process">
-        <h2>Bestil et Service/Projekt</h2>
-        <form action="#" method="post">
-            <div class="step" id="step1">
-                <label for="service-type">Vælg service type:</label>
-                <select id="service-type" name="service-type" required>
-                    <option value="">Vælg...</option>
-                    <option value="chatbot">Chatbots</option>
-                    <option value="automation">Automatisering</option>
-                    <option value="data-analysis">Data analyse</option>
-                </select>
-                <button type="button" onclick="nextStep(2)">Næste</button>
-            </div>
-            <div class="step" id="step2" style="display:none;">
-                <label for="details">Yderligere detaljer:</label>
-                <textarea id="details" name="details" placeholder="Beskriv dit projekt..."></textarea>
-                <button type="button" onclick="prevStep(1)">Tilbage</button>
-                <button type="button" onclick="nextStep(3)">Næste</button>
-            </div>
-            <div class="step" id="step3" style="display:none;">
-                <label for="contact">Kontakt information:</label>
-                <input type="text" id="name" name="name" placeholder="Dit navn" required>
-                <input type="email" id="email" name="email" placeholder="Din email" required>
-                <input type="tel" id="phone" name="phone" placeholder="Dit telefonnummer">
-                <button type="button" onclick="prevStep(2)">Tilbage</button>
-                <button type="submit">Send bestilling</button>
-            </div>
-        </form>
+      <h2>Bestil et Service/Projekt</h2>
+      <form action="#" method="post">
+        <!-- Step 1 vælger typen af service -->
+        <div class="step" id="step1">
+          <label for="service-type">Vælg service type:</label>
+          <select id="service-type" name="service-type" required>
+            <option value="">Vælg...</option>
+            <option value="chatbot">Chatbots</option>
+            <option value="automation">Automatisering</option>
+            <option value="data-analysis">Data analyse</option>
+          </select>
+          <button type="button" onclick="nextStep(2)">Næste</button>
+        </div>
+
+        <!-- Step 2 samler flere detaljer om projektet -->
+        <div class="step" id="step2" style="display:none;">
+          <label for="details">Yderligere detaljer:</label>
+          <textarea id="details" name="details" placeholder="Beskriv dit projekt..."></textarea>
+          <button type="button" onclick="prevStep(1)">Tilbage</button>
+          <button type="button" onclick="nextStep(3)">Næste</button>
+        </div>
+
+        <!-- Step 3 beder om kontaktoplysninger -->
+        <div class="step" id="step3" style="display:none;">
+          <label for="contact">Kontakt information:</label>
+          <input type="text" id="name" name="name" placeholder="Dit navn" required>
+          <input type="email" id="email" name="email" placeholder="Din email" required>
+          <input type="tel" id="phone" name="phone" placeholder="Dit telefonnummer">
+          <button type="button" onclick="prevStep(2)">Tilbage</button>
+          <button type="submit">Send bestilling</button>
+        </div>
+      </form>
     </section>
-</main>
-<footer>
+  </main>
+
+  <!-- Footer med copyright-information -->
+  <footer>
     <p>© AAU 2026</p>
   </footer>
 </body>
