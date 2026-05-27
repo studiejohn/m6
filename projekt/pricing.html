@@ -20,20 +20,114 @@
   </header>
 
 <main>
-    <h2>Vores priser!</h2>
+    <section id="pricing-intro">
+      <h2>Vores priser</h2>
+      <p>Vælg den service og pakke, der passer bedst til dit projekt, og se vores anbefalede pris direkte.</p>
+      <p>Som studerende holder vi priserne lave, fordi vi stadig er under uddannelse og ønsker at lære gennem rigtige opgaver.</p>
+      <p>Du kan også gå til vores <a class="button-link" href="ai.html">AI services</a> for at se flere detaljer om automatisering og intelligente løsninger.</p>
+    </section>
 
-    <div class="box">
+    <section id="price-selector">
+      <div class="select-row">
+        <label for="service-type">Vælg service</label>
+        <select id="service-type">
+          <option value="">Vælg service...</option>
+          <option value="webdesign">Webdesign</option>
+          <option value="ai">AI-løsninger</option>
+          <option value="support">Support & rådgivning</option>
+        </select>
+      </div>
+
+      <div class="select-row">
+        <label for="package-level">Vælg pakke</label>
+        <select id="package-level">
+          <option value="">Vælg pakke...</option>
+          <option value="basic">Basic</option>
+          <option value="standard">Standard</option>
+          <option value="premium">Premium</option>
+        </select>
+      </div>
+
+      <div id="price-output" class="price-card hidden">
+        <h3>Prisoversigt</h3>
+        <p id="selected-service">Service: -</p>
+        <p id="selected-package">Pakke: -</p>
+        <p id="selected-price" class="price-value">Pris: -</p>
+        <p id="package-description" class="price-info">Beskrivelse: Vælg service og pakke for at se pris.</p>
+        <p class="price-note">Vil du have en mere præcis beregning? <a class="contact-link" href="mailto:kontakt@os.aau.dk">Kontakt os</a> for en gratis samtale.</p>
+      </div>
+    </section>
+
+    <section class="pricing-grid">
+      <div class="box">
         <h3>Basic</h3>
-        <p>2000 kr</p>
-    </div>
-
-    <div class="box">
+        <p>God til nye virksomheder eller mindre projekter, hvor vi bygger kerneindhold og klar struktur.</p>
+        <p class="price-value">Fra 3.500 kr</p>
+      </div>
+      <div class="box">
         <h3>Standard</h3>
-        <p>5000 kr</p>
-    </div>
-
-    <div class="box">
+        <p>Velegnet til virksomheder, der vil have ekstra funktioner, flere sider og bedre brugeroplevelse.</p>
+        <p class="price-value">Fra 8.500 kr</p>
+      </div>
+      <div class="box">
         <h3>Premium</h3>
-        <p>8000 kr</p>
-    </div>
-</main>
+        <p>En komplet løsning med tilpasning, avanceret design og efterfølgende support.</p>
+        <p class="price-value">Fra 14.000 kr</p>
+      </div>
+    </section>
+
+    <section class="cta-block">
+      <h2>Forbundet med vores services</h2>
+      <p>Vores prisoversigt arbejder sammen med servicebeskrivelsen. Hvis du vil læse mere om AI og webdesign, kan du besøge <a href="ai.html">AI services</a> eller <a href="about.html">vores om os</a>-side for at lære mere om teamet.</p>
+      <p>Vil du arbejde med os? <a class="button-link" href="mailto:kontakt@os.aau.dk">Skriv til kontakt@os.aau.dk</a> og få en gratis indledende snak.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© AAU 2026</p>
+  </footer>
+
+  <script>
+    const prices = {
+      webdesign: { basic: 3500, standard: 8500, premium: 14000 },
+      ai: { basic: 4500, standard: 10000, premium: 18000 },
+      support: { basic: 2000, standard: 4500, premium: 9000 }
+    };
+    const descriptions = {
+      basic: 'Grundlæggende løsning med nøglefunktioner og hurtig opstart.',
+      standard: 'Et stærkt setup med ekstra værdi, support og tilpasning.',
+      premium: 'Fuld service med avancerede funktioner og opfølgende support.'
+    };
+
+    const serviceSelect = document.getElementById('service-type');
+    const packageSelect = document.getElementById('package-level');
+    const priceOutput = document.getElementById('price-output');
+    const selectedService = document.getElementById('selected-service');
+    const selectedPackage = document.getElementById('selected-package');
+    const selectedPrice = document.getElementById('selected-price');
+    const packageDescription = document.getElementById('package-description');
+
+    function updatePrice() {
+      const service = serviceSelect.value;
+      const pkg = packageSelect.value;
+
+      if (!service || !pkg) {
+        priceOutput.classList.add('hidden');
+        return;
+      }
+
+      const price = prices[service][pkg];
+      const serviceLabel = service === 'webdesign' ? 'Webdesign' : service === 'ai' ? 'AI-løsninger' : 'Support & rådgivning';
+
+      selectedService.textContent = `Service: ${serviceLabel}`;
+      selectedPackage.textContent = `Pakke: ${pkg.charAt(0).toUpperCase() + pkg.slice(1)}`;
+      selectedPrice.textContent = `Pris: ${price} kr`;
+      packageDescription.textContent = descriptions[pkg];
+      priceOutput.classList.remove('hidden');
+    }
+
+    serviceSelect.addEventListener('change', updatePrice);
+    packageSelect.addEventListener('change', updatePrice);
+  </script>
+</body>
+</html>
