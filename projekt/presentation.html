@@ -18,34 +18,46 @@
       <a href="ai.html">Services</a>
       <a href="faq.html">FAQ</a>
     </nav>
-    <h1>Vores projekter</h1>
+    <div class="hero-content">
+      <h1>Vores projekter</h1>
+      <p class="hero-sub">Udvalgte cases, demonstrationer og tekniske erfaringer — designet, bygget og dokumenteret.</p>
+      <a class="button-link hero-cta" href="contact.html">Kontakt os</a>
+    </div>
   </header>
 <main>
     <section id="projekter-intro">
       <h2>Hvad vi har arbejdet på</h2>
-      <p>Her finder du en eksempler på de projekter vi har gennemført.</p>
+      <p>Her finder du eksempler på de projekter vi har gennemført.</p>
     </section>
 
-    <!-- Hvert projekt får sin egen section med et unikt id -->
-    <section id="projekt-eportfolio">
-      <h2>E-portfolio hjemmeside</h2>
-      <p>Udvikling af denne e-portfolio som en statisk hjemmeside med flere sider. Projektet dækker hele processen fra design og planlægning til implementering og versionsstyring med Git og GitHub.</p>
-      <!-- ul bruges til at liste de vigtigste teknologier og værktøjer -->
-      <ul>
-        <li>Teknologier: HTML og CSS</li>
-        <li>Versionsstyring: Git og GitHub</li>
-        <li>Projektstyring: Kanban via GitHub Projects</li>
-      </ul>
-    </section>
+    <section class="project-grid" aria-label="Projekter">
+      <article class="project-card fade-up" id="projekt-eportfolio">
+        <div class="image-card">
+          <img class="section-image" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80" alt="Skærmbillede af e-portfolio">
+        </div>
+        <h3>E-portfolio hjemmeside</h3>
+        <p>Udvikling af denne e-portfolio som en statisk hjemmeside med flere sider. Projektet dækker design, implementering og versionsstyring med Git og GitHub.</p>
+        <ul>
+          <li>Teknologier: HTML &amp; CSS</li>
+          <li>Versionsstyring: Git &amp; GitHub</li>
+          <li>Projektstyring: Kanban</li>
+        </ul>
+        <a class="button-link" href="index.html">Se siden</a>
+      </article>
 
-    <section id="projekt-ai">
-      <h2>Implementering af AI</h2>
-      <p>Undersøgelse og dokumentation af, hvordan AI kan integreres i en virksomheds digitale løsninger.</p>
-      <ul>
-        <li>Rådgivning om AI-løsninger tilpasset virksomhedens behov</li>
-        <li>Chatbots og automatisering</li>
-        <li>Data analyse</li>
-      </ul>
+      <article class="project-card fade-up" id="projekt-ai">
+        <div class="image-card">
+          <img class="section-image" src="https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?auto=format&fit=crop&w=1200&q=80" alt="AI illustration">
+        </div>
+        <h3>Implementering af AI</h3>
+        <p>Undersøgelse og dokumentation af hvordan AI kan integreres i digitale løsninger: chatbots, automatisering og dataanalyse.</p>
+        <ul>
+          <li>Rådgivning om tilpassede AI-løsninger</li>
+          <li>Chatbots &amp; automatisering</li>
+          <li>Dataanalyse</li>
+        </ul>
+        <a class="button-link" href="ai.html">Læs mere</a>
+      </article>
     </section>
 
   </main>
@@ -54,6 +66,18 @@
   <footer>
     <p>© AAU 2026</p>
   </footer>
+</footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('in-view');
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    });
+  </script>
 
 </body>
 </html>
